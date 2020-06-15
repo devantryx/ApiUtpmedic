@@ -83,7 +83,6 @@ namespace ApiUtpmedic.Repository
         //    return usuario;
         //}
 
-
         public Usuario CrearUsuario(Persona persona, Usuario usuario, Paciente paciente, string clave)
 
         {
@@ -105,9 +104,19 @@ namespace ApiUtpmedic.Repository
             return usuario;
         }
 
+        public bool ActualizarUsuario(Usuario usuario,string clave)
+        {
+            byte[] usuario_clave, usuario_clave2;
 
+            CrearClave(clave, out usuario_clave, out usuario_clave2);
 
-        //Trae nformacion de usuario pasandole su dni
+            usuario.usuario_clave = usuario_clave;
+            usuario.usuario_clave2 = usuario_clave2;
+
+            _bd.Usuario.Update(usuario);
+            return Guardar();
+        }
+        //Trae datos de persona paciente usuario pasandole su dni---------------------------------------------
         public IEnumerable<Persona> TraerDatosUsuario(string dni)
         {
             IQueryable<Persona> query = _bd.Persona;
@@ -130,7 +139,9 @@ namespace ApiUtpmedic.Repository
             return _bd.Paciente.Include(p => p.Usuario).Where(p => p.idpaciente == idpaciente).ToList();
 
         }
+        //----------------------------------------------------------------------------------------------------
 
+       
         private bool VerificaClave(string clave, byte[] usuario_clave, byte[] usuario_clave2) //hash = usuario_clave ; salt= usuario_clave2
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512(usuario_clave2))
@@ -157,6 +168,6 @@ namespace ApiUtpmedic.Repository
             return true;
         }
 
-
+        
     }
 }

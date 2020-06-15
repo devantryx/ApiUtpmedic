@@ -25,6 +25,8 @@ namespace ApiUtpmedic.Mapper
 
             CreateMap<Usuario, UsuarioCreateDto>().ReverseMap();
 
+            CreateMap<Usuario, UsuarioUpdateDto>().ReverseMap();
+
             CreateMap<Usuario, UsuarioDto>().ReverseMap();
 
             CreateMap<Publicacion, PublicacionDto>().ReverseMap();

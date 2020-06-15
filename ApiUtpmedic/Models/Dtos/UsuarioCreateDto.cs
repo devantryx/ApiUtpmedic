@@ -10,6 +10,7 @@ namespace ApiUtpmedic.Models.Dtos
     //Ingreso de campos para crear usuario
     public class UsuarioCreateDto
     {
+        [StringLength(8, MinimumLength = 1, ErrorMessage = "El usuario debe contener entre 1 a 8 digitos")]
         [Required(ErrorMessage = "El usuario es requerido")]
         public string usuario_user { get; set; }
 

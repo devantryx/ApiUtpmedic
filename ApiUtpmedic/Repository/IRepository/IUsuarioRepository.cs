@@ -18,6 +18,8 @@ namespace ApiUtpmedic.Repository.IRepository
 
         Usuario CrearUsuario(Persona persona, Usuario usuario, Paciente paciente, string clave);
 
+        bool ActualizarUsuario(Usuario usuario, string clave);
+
         IEnumerable<Persona> TraerDatosUsuario(string dni);
 
         //--------------------------------------------------------
@@ -25,6 +27,7 @@ namespace ApiUtpmedic.Repository.IRepository
         IEnumerable<Paciente> GetPacienteUsuario(int idpaciente);
         //--------------------------------------------------------
 
+       
         Usuario Login(string usuario, string clave);
 
         bool Guardar();

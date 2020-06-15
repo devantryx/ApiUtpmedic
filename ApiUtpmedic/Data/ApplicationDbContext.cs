@@ -27,8 +27,6 @@ namespace ApiUtpmedic.Data
 
         public DbSet<Usuario> Usuario { get; set; }
 
-        //public DbSet<UsuarioDto> UsuarioDto { get; set; }
-
         public DbSet<Persona> Persona { get; set; }
 
         public DbSet<Paciente> Paciente { get; set; }

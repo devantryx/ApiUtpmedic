@@ -279,6 +279,37 @@ namespace ApiUtpmedic.Controllers
 
         }
 
+     
+        [HttpPatch("{usuarioId:int}", Name = "ActualizarUsuario")]
+        public IActionResult ActualizarUsuario(int usuarioId, [FromBody] UsuarioUpdateDto UsuarioDto)
+        {
+            try {
 
+            if (UsuarioDto == null || usuarioId != UsuarioDto.idusuario)
+            {
+                return BadRequest(ModelState);//400 Bad Request. El servidor no puede o no va a procesar el request por un error de sintaxis del cliente.
+                }
+
+            var usuario = new Usuario{
+                idusuario       = UsuarioDto.idusuario,
+                usuario_user    = UsuarioDto.usuario_user,
+                nombrefoto      = UsuarioDto.nombrefoto,
+                idtipousuario   = UsuarioDto.idtipousuario
+            };
+
+            var usuarioUpdate = _userRepo.ActualizarUsuario(usuario, UsuarioDto.usuario_clave);//devuelve true si todo esta bien
+
+            if (usuarioUpdate == false) {
+                ModelState.AddModelError("", $"Algo salio mal, actualizano el registro{usuario.idusuario}");
+                 //return StatusCode(500, ModelState);
+            }
+              return NoContent(); //204 No Content. El request se ha procesado correctamente, pero no devuelve ningún contenido.                     
+
+            }
+              catch (Exception)
+              {
+                  return StatusCode(StatusCodes.Status500InternalServerError, "Error interno en el servidor.");//500 Internal Server Error. Error genérico, cuando se ha dado una condición no esperada y no se puede concretar el mensaje.
+            }
+        }
     }
 }
