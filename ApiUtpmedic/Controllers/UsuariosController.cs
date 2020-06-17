@@ -10,6 +10,7 @@ using ApiUtpmedic.Models;
 using ApiUtpmedic.Models.Dtos;
 using ApiUtpmedic.Repository.IRepository;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,7 @@ namespace ApiUtpmedic.Controllers
 {
     [Route("api/Usuarios")]
     [ApiController]
+   
     public class UsuariosController : Controller
     {
         private readonly IUsuarioRepository _userRepo;
@@ -134,7 +136,8 @@ namespace ApiUtpmedic.Controllers
             {
                 return Unauthorized("Usuario no autorizado");
             }
-
+            
+            //JWT es un formato estándar, compacto y seguro de trasmitir Claims(propiedades, afirmaciones o en general información)
             //genera claim
             var claims = new[]
             {
@@ -176,9 +179,10 @@ namespace ApiUtpmedic.Controllers
         /// Lista todos los usuario
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet("obtenerusuarios")]
         [ProducesResponseType(200, Type = typeof(List<UsuarioDto>))]
         [ProducesResponseType(400)]
+        //[Authorize] //protege mi lista de usuarios donde solo ciertos usuarios puedan tener acceso
         public IActionResult GetUsuarios()
         {
             var listaUsuarios = _userRepo.GetUsuarios();

@@ -6,6 +6,7 @@ using ApiUtpmedic.Models;
 using ApiUtpmedic.Models.Dtos;
 using ApiUtpmedic.Repository.IRepository;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,6 +14,7 @@ namespace ApiUtpmedic.Controllers
 {
     [Route("api/Publicaciones")]
     [ApiController]
+   
     public class PublicacionesController : Controller
     {
         private readonly IPublicacionRepository _pcRepo;

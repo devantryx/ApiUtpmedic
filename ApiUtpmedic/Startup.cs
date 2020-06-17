@@ -52,8 +52,8 @@ namespace ApiUtpmedic
                     {
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
-                        ValidateIssuer = false,
-                        ValidateAudience = false
+                        ValidateIssuer = true,
+                        ValidateAudience = true
                     };
                 });
 
@@ -73,7 +73,7 @@ namespace ApiUtpmedic
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            //Autorizacion  y autenticacion a ciertas funcionalidades
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
