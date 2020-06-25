@@ -4,14 +4,16 @@ using ApiUtpmedic.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ApiUtpmedic.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200625001725_Migracion03")]
+    partial class Migracion03
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -110,24 +112,6 @@ namespace ApiUtpmedic.Migrations
                     b.HasIndex("idmedico");
 
                     b.ToTable("Horario");
-                });
-
-            modelBuilder.Entity("ApiUtpmedic.Models.Medicamento", b =>
-                {
-                    b.Property<int>("idmedicamento")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("medicamento_nombre")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("medicamento_presenta")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("idmedicamento");
-
-                    b.ToTable("Medicamento");
                 });
 
             modelBuilder.Entity("ApiUtpmedic.Models.Medico", b =>

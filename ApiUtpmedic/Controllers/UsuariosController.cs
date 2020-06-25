@@ -65,7 +65,7 @@ namespace ApiUtpmedic.Controllers
                     //ModelState.AddModelError("", "El usuario ingreado ya existe");
                     //return StatusCode(404, ModelState);
                 }
-                var archivo = UsuarioDto.foto;
+                var archivo =  UsuarioDto.foto;
                 string ruta = _hostEnvironment.WebRootPath;
                 var archivos = HttpContext.Request.Form.Files;
 

@@ -32,6 +32,8 @@ namespace ApiUtpmedic.Data
         public DbSet<Paciente> Paciente { get; set; }
 
         public DbSet<Publicacion> Publicacion { get; set; }
+
+        public DbSet<Medicamento> Medicamento { get; set; }
     }
 }
 

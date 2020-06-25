@@ -43,6 +43,7 @@ namespace ApiUtpmedic
             services.AddScoped<IEspecialidadRepository, EspecialidadRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IPublicacionRepository, PublicacionRepository>();
+            services.AddScoped<IMedicamentoRepository, MedicamentoRepository>();
 
             //Dependencia del token
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

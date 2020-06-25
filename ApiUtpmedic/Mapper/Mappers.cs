@@ -33,6 +33,9 @@ namespace ApiUtpmedic.Mapper
 
             CreateMap<Persona, PersonaDto>().ReverseMap();
 
+            CreateMap<Medicamento, MedicamentoDto>().ReverseMap();
+
+
 
 
         }
