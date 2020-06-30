@@ -21,7 +21,7 @@ namespace ApiUtpmedic.Controllers
 {
     [Route("api/Usuarios")]
     [ApiController]
-   
+    [ApiExplorerSettings(GroupName = "ApiUsuarios")]
     public class UsuariosController : Controller
     {
         private readonly IUsuarioRepository _userRepo;

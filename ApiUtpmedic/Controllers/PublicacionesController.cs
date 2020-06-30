@@ -14,7 +14,7 @@ namespace ApiUtpmedic.Controllers
 {
     [Route("api/Publicaciones")]
     [ApiController]
-   
+    [ApiExplorerSettings (GroupName ="ApiPublicaciones")]
     public class PublicacionesController : Controller
     {
         private readonly IPublicacionRepository _pcRepo;

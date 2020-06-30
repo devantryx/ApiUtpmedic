@@ -61,17 +61,47 @@ namespace ApiUtpmedic
             services.AddAutoMapper(typeof(Mappers));
 
             services.AddControllers();
+            ConfigureSwagger(services);
+           
+        }
+
+        private static void ConfigureSwagger(IServiceCollection services)
+        {
+            //configurar swagger
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("ApiUsuarios", new Microsoft.OpenApi.Models.OpenApiInfo        { Title = "ApiUsuarios",        Version = "v1" ,Description="Backend Usuario", Contact=new                  Microsoft.OpenApi.Models.OpenApiContact() { Email="info@utpmedic.com",Name="UTPMEDIC", Url=new Uri("https://www.utp.edu.pe/") } });
+                c.SwaggerDoc("ApiCitas",    new Microsoft.OpenApi.Models.OpenApiInfo        { Title = "ApiCitas",           Version = "v1", Description = "Backend Citas", Contact = new              Microsoft.OpenApi.Models.OpenApiContact() { Email = "info@utpmedic.com", Name = "UTPMEDIC", Url = new Uri("https://www.utp.edu.pe/") } });
+                c.SwaggerDoc("ApiClinicas", new Microsoft.OpenApi.Models.OpenApiInfo        { Title = "ApiClinicas",        Version = "v1", Description = "Backend Clinicas", Contact = new             Microsoft.OpenApi.Models.OpenApiContact() { Email = "info@utpmedic.com", Name = "UTPMEDIC", Url = new Uri("https://www.utp.edu.pe/") } });
+                c.SwaggerDoc("ApiEspecialidades", new Microsoft.OpenApi.Models.OpenApiInfo  { Title = "ApiEspecialidades",  Version = "v1", Description = "Backend Especialidades", Contact = new    Microsoft.OpenApi.Models.OpenApiContact() { Email = "info@utpmedic.com",Name = "UTPMEDIC", Url = new Uri("https://www.utp.edu.pe/") } });
+                c.SwaggerDoc("ApiMedicamentos",   new Microsoft.OpenApi.Models.OpenApiInfo  { Title = "ApiMedicamentos",    Version = "v1", Description = "Backend Medicamentos", Contact = new    Microsoft.OpenApi.Models.OpenApiContact() { Email = "info@utpmedic.com",Name = "UTPMEDIC", Url = new Uri("https://www.utp.edu.pe/") } });
+                c.SwaggerDoc("ApiPublicaciones",  new Microsoft.OpenApi.Models.OpenApiInfo  { Title = "ApiPublicaciones",   Version = "v1", Description = "Backend Publicaciones", Contact = new    Microsoft.OpenApi.Models.OpenApiContact() { Email = "info@utpmedic.com",Name = "UTPMEDIC", Url = new Uri("https://www.utp.edu.pe/") } });
+
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //swagger
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/ApiUsuarios/swagger.json", "ApiUsuarios");
+                c.SwaggerEndpoint("/swagger/ApiCitas/swagger.json", "ApiCitas");
+                c.SwaggerEndpoint("/swagger/ApiClinicas/swagger.json", "ApiClinicas");
+                c.SwaggerEndpoint("/swagger/ApiEspecialidades/swagger.json", "ApiEspecialidades");
+                c.SwaggerEndpoint("/swagger/ApiMedicamentos/swagger.json", "ApiMedicamentos");
+                c.SwaggerEndpoint("/swagger/ApiPublicaciones/swagger.json", "ApiPublicaciones");
+                
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
             app.UseHttpsRedirection();
+         
 
             app.UseRouting();
             //Autorizacion  y autenticacion a ciertas funcionalidades

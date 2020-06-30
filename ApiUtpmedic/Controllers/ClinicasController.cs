@@ -13,6 +13,7 @@ namespace ApiUtpmedic.Controllers
 {
     [Route("api/Clinicas")]
     [ApiController]
+    [ApiExplorerSettings(GroupName = "ApiClinicas")]
     public class ClinicasController : Controller
     {
         private readonly IClinicaRepository _clRepo;

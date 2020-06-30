@@ -12,6 +12,7 @@ namespace ApiUtpmedic.Controllers
 {
     [Route("api/Citas")]
     [ApiController]
+    [ApiExplorerSettings(GroupName = "ApiCitas")]
     public class CitasController : Controller
     {
         private readonly ICitaRepository _ctRepo;

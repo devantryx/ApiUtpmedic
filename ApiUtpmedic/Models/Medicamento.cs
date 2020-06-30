@@ -12,6 +12,6 @@ namespace ApiUtpmedic.Models
         public int idmedicamento { get; set; }
         public string medicamento_nombre { get; set; }
         public string medicamento_presenta { get; set; }
-
+        public string foto_url { get; set; }
     }
 }

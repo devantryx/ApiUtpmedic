@@ -13,6 +13,7 @@ namespace ApiUtpmedic.Controllers
 {
     [Route("api/Especialidades")]
     [ApiController]
+    [ApiExplorerSettings(GroupName = "ApiEspecialidades")]
     public class EspecialidadesController : Controller
     {
         private readonly IEspecialidadRepository _ctRepo;
