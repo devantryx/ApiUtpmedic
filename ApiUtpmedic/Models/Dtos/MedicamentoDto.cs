@@ -11,6 +11,8 @@ namespace ApiUtpmedic.Models.Dtos
         public string medicamento_nombre { get; set; }
         public string medicamento_presenta { get; set; }
         public string foto_url { get; set; }
-
+        public string composicion { get; set; }
+        public string contraindicaciones { get; set; }
+        public string precaucion { get; set; }
     }
 }
