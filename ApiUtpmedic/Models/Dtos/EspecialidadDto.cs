@@ -12,5 +12,6 @@ namespace ApiUtpmedic.Models.Dtos
 
         [Required(ErrorMessage = "El nombre es obligatorio")]
         public string especialidad_nombre { get; set; }
+        public string foto_url { get; set; }
     }
 }

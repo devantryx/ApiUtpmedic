@@ -23,6 +23,6 @@ namespace ApiUtpmedic.Models
         [ForeignKey("idtipousuario")]
         public TipoUsuario TipoUsuario { get; set; }
 
-
+      
     }
 }

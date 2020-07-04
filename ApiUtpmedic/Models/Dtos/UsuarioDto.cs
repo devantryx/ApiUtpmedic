@@ -12,7 +12,9 @@ namespace ApiUtpmedic.Models.Dtos
         public string   usuario_user    { get; set; }
         //public byte[]   usuario_clave   { get; set; }
         //public byte[]   usuario_clave2  { get; set; }
-        //public string   nombrefoto      { get; set; }
-        //public int      idtipousuario   { get; set; }
+        public string   nombrefoto      { get; set; }
+        
+        public int      idtipousuario   { get; set; }
+        
     }
 }

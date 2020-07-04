@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ApiUtpmedic.Models.Dtos
 {
-    public class TipoUsuarioDto
+    public class PacienteUsuarioDto
     {
         [Key]
-        public int idtipousuario { get; set; }
-        public string tipousuario_descripcion { get; set; }
+        public int idpaciente { get; set; }
 
-        
+        public UsuarioDto Usuario { get; set; }
+
     }
 }

@@ -14,5 +14,6 @@ namespace ApiUtpmedic.Models.Dtos
         public string composicion { get; set; }
         public string contraindicaciones { get; set; }
         public string precaucion { get; set; }
+        public int megusta { get; set; }
     }
 }

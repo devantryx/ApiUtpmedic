@@ -24,5 +24,7 @@ namespace ApiUtpmedic.Models
         [ForeignKey("idpersona")]
         public Persona Persona { get; set; }
 
+        public string foto_url { get; set; }
+
     }
 }

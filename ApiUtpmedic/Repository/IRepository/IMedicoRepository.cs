@@ -13,5 +13,6 @@ namespace ApiUtpmedic.Repository.IRepository
         ICollection<Medico> GetMedicos();
         Medico GetMedico(int idmedico);
         bool ExisteMedico(int idmedico);
+        IEnumerable<Medico> GetMedicoPersona();
     }
 }

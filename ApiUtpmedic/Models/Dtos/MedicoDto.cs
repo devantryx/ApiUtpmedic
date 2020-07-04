@@ -10,6 +10,8 @@ namespace ApiUtpmedic.Models.Dtos
         public int idmedico { get; set; }
         public int idespecialidad { get; set; }
         public int idclinica { get; set; }
+        public string foto_url { get; set; }
 
+        public Persona Persona { get; set; }
     }
 }

@@ -44,6 +44,8 @@ namespace ApiUtpmedic
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IPublicacionRepository, PublicacionRepository>();
             services.AddScoped<IMedicamentoRepository, MedicamentoRepository>();
+            services.AddScoped<IMedicoRepository, MedicoRepository>();
+            services.AddScoped<IPacienteRepository, PacienteRepository>();
 
             //Dependencia del token
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -73,7 +75,13 @@ namespace ApiUtpmedic
                 c.SwaggerDoc("ApiUsuarios", new Microsoft.OpenApi.Models.OpenApiInfo        { Title = "ApiUsuarios",        Version = "v1" ,Description="Backend Usuario", Contact=new                  Microsoft.OpenApi.Models.OpenApiContact() { Email="info@utpmedic.com",Name="UTPMEDIC", Url=new Uri("https://www.utp.edu.pe/") } });
                 c.SwaggerDoc("ApiCitas",    new Microsoft.OpenApi.Models.OpenApiInfo        { Title = "ApiCitas",           Version = "v1", Description = "Backend Citas", Contact = new              Microsoft.OpenApi.Models.OpenApiContact() { Email = "info@utpmedic.com", Name = "UTPMEDIC", Url = new Uri("https://www.utp.edu.pe/") } });
                 c.SwaggerDoc("ApiClinicas", new Microsoft.OpenApi.Models.OpenApiInfo        { Title = "ApiClinicas",        Version = "v1", Description = "Backend Clinicas", Contact = new             Microsoft.OpenApi.Models.OpenApiContact() { Email = "info@utpmedic.com", Name = "UTPMEDIC", Url = new Uri("https://www.utp.edu.pe/") } });
+                
                 c.SwaggerDoc("ApiEspecialidades", new Microsoft.OpenApi.Models.OpenApiInfo  { Title = "ApiEspecialidades",  Version = "v1", Description = "Backend Especialidades", Contact = new    Microsoft.OpenApi.Models.OpenApiContact() { Email = "info@utpmedic.com",Name = "UTPMEDIC", Url = new Uri("https://www.utp.edu.pe/") } });
+
+                c.SwaggerDoc("ApiMedicos", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "ApiMedicos", Version = "v1", Description = "Backend Medicos", Contact = new Microsoft.OpenApi.Models.OpenApiContact() { Email = "info@utpmedic.com", Name = "UTPMEDIC", Url = new Uri("https://www.utp.edu.pe/") } });
+
+                c.SwaggerDoc("ApiPacientes", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "ApiPacientes", Version = "v1", Description = "Backend Pacientes", Contact = new Microsoft.OpenApi.Models.OpenApiContact() { Email = "info@utpmedic.com", Name = "UTPMEDIC", Url = new Uri("https://www.utp.edu.pe/") } });
+
                 c.SwaggerDoc("ApiMedicamentos",   new Microsoft.OpenApi.Models.OpenApiInfo  { Title = "ApiMedicamentos",    Version = "v1", Description = "Backend Medicamentos", Contact = new    Microsoft.OpenApi.Models.OpenApiContact() { Email = "info@utpmedic.com",Name = "UTPMEDIC", Url = new Uri("https://www.utp.edu.pe/") } });
                 c.SwaggerDoc("ApiPublicaciones",  new Microsoft.OpenApi.Models.OpenApiInfo  { Title = "ApiPublicaciones",   Version = "v1", Description = "Backend Publicaciones", Contact = new    Microsoft.OpenApi.Models.OpenApiContact() { Email = "info@utpmedic.com",Name = "UTPMEDIC", Url = new Uri("https://www.utp.edu.pe/") } });
 
@@ -90,6 +98,8 @@ namespace ApiUtpmedic
                 c.SwaggerEndpoint("/swagger/ApiCitas/swagger.json", "ApiCitas");
                 c.SwaggerEndpoint("/swagger/ApiClinicas/swagger.json", "ApiClinicas");
                 c.SwaggerEndpoint("/swagger/ApiEspecialidades/swagger.json", "ApiEspecialidades");
+                c.SwaggerEndpoint("/swagger/ApiMedicos/swagger.json", "ApiMedicos");
+                c.SwaggerEndpoint("/swagger/ApiPacientes/swagger.json", "ApiPacientes");
                 c.SwaggerEndpoint("/swagger/ApiMedicamentos/swagger.json", "ApiMedicamentos");
                 c.SwaggerEndpoint("/swagger/ApiPublicaciones/swagger.json", "ApiPublicaciones");
                 
