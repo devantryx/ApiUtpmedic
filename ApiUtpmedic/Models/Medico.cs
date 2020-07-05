@@ -26,5 +26,7 @@ namespace ApiUtpmedic.Models
 
         public string foto_url { get; set; }
 
+        public int experiencia { get; set; }
+
     }
 }

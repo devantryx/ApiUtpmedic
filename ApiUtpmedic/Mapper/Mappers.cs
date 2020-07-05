@@ -41,8 +41,11 @@ namespace ApiUtpmedic.Mapper
 
             CreateMap<Medicamento, MedicamentoDto>().ReverseMap();
 
+            CreateMap<Horario, HorarioDto>().ReverseMap();
 
+            
 
+            
 
         }
     }

@@ -46,6 +46,7 @@ namespace ApiUtpmedic
             services.AddScoped<IMedicamentoRepository, MedicamentoRepository>();
             services.AddScoped<IMedicoRepository, MedicoRepository>();
             services.AddScoped<IPacienteRepository, PacienteRepository>();
+            services.AddScoped<IHorarioRepository, HorarioRepository>();
 
             //Dependencia del token
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -82,6 +83,8 @@ namespace ApiUtpmedic
 
                 c.SwaggerDoc("ApiPacientes", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "ApiPacientes", Version = "v1", Description = "Backend Pacientes", Contact = new Microsoft.OpenApi.Models.OpenApiContact() { Email = "info@utpmedic.com", Name = "UTPMEDIC", Url = new Uri("https://www.utp.edu.pe/") } });
 
+                c.SwaggerDoc("ApiHorariosMedico", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "ApiHorariosMedico", Version = "v1", Description = "Backend Horarios Medico", Contact = new Microsoft.OpenApi.Models.OpenApiContact() { Email = "info@utpmedic.com", Name = "UTPMEDIC", Url = new Uri("https://www.utp.edu.pe/") } });
+
                 c.SwaggerDoc("ApiMedicamentos",   new Microsoft.OpenApi.Models.OpenApiInfo  { Title = "ApiMedicamentos",    Version = "v1", Description = "Backend Medicamentos", Contact = new    Microsoft.OpenApi.Models.OpenApiContact() { Email = "info@utpmedic.com",Name = "UTPMEDIC", Url = new Uri("https://www.utp.edu.pe/") } });
                 c.SwaggerDoc("ApiPublicaciones",  new Microsoft.OpenApi.Models.OpenApiInfo  { Title = "ApiPublicaciones",   Version = "v1", Description = "Backend Publicaciones", Contact = new    Microsoft.OpenApi.Models.OpenApiContact() { Email = "info@utpmedic.com",Name = "UTPMEDIC", Url = new Uri("https://www.utp.edu.pe/") } });
 
@@ -100,6 +103,7 @@ namespace ApiUtpmedic
                 c.SwaggerEndpoint("/swagger/ApiEspecialidades/swagger.json", "ApiEspecialidades");
                 c.SwaggerEndpoint("/swagger/ApiMedicos/swagger.json", "ApiMedicos");
                 c.SwaggerEndpoint("/swagger/ApiPacientes/swagger.json", "ApiPacientes");
+                c.SwaggerEndpoint("/swagger/ApiHorariosMedico/swagger.json", "ApiHorariosMedico");
                 c.SwaggerEndpoint("/swagger/ApiMedicamentos/swagger.json", "ApiMedicamentos");
                 c.SwaggerEndpoint("/swagger/ApiPublicaciones/swagger.json", "ApiPublicaciones");
                 

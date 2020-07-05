@@ -15,6 +15,7 @@ namespace ApiUtpmedic.Models
         public string horario_hfin { get; set; }
         public string horario_dia { get; set; }
 
+        public int idmedico { get; set; }
         //relacion entre Horario y Medico
         [ForeignKey("idmedico")]
         public Medico Medico { get; set; }

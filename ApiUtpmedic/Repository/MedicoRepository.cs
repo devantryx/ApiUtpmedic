@@ -39,7 +39,9 @@ namespace ApiUtpmedic.Repository
 
         public IEnumerable<Medico> GetMedicoPersona()
         {
-            return _bd.Medico.Include(p => p.Persona).ToList();
+            return _bd.Medico.Include(p => p.Persona )
+                             .Include(p=> p.Especialidad)
+                             .ToList();
 
         }
 
