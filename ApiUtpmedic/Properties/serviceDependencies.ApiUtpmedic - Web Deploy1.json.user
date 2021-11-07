@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2020-06-11T06:20:00.3461038Z"
+    }
+  },
+  "parameters": {
+    "resourceGroup": {
+      "Type": "resourceGroup",
+      "Value": "utpmedic"
+    },
+    "subscriptionId": {
+      "Type": "subscription",
+      "Value": "eed10fa8-98f2-4d39-b518-83f7ecb0968a"
+    }
+  }
+}

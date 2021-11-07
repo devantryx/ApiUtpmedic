@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiUtpmedic</name>
+    </assembly>
+    <members>
+        <member name="M:ApiUtpmedic.Controllers.CitasController.GetCitas">
+            <summary>
+            Obtiene citas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.CitasController.GetCita(System.Int32)">
+            <summary>
+            Obtiene cita por Id
+            </summary>
+            <param name="idcita"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.ClinicasController.GetClinicas">
+            <summary>
+            Obtiene clinicas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.ClinicasController.GetClinica(System.Int32)">
+            <summary>
+            Obtiene clinica por Id
+            </summary>
+            <param name="idclinica"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.ClinicasController.CrearClinica(ApiUtpmedic.Models.Dtos.ClinicaDto)">
+            <summary>
+            Crea nueva cita
+            </summary>
+            <param name="clinicaDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.ClinicasController.ActualizarClinica(System.Int32,ApiUtpmedic.Models.Dtos.ClinicaDto)">
+            <summary>
+            Actualiza clinica por Id
+            </summary>
+            <param name="idclinica"></param>
+            <param name="clinicaDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.ClinicasController.BorrarClinica(System.Int32)">
+            <summary>
+            Borra clinica por Id
+            </summary>
+            <param name="idclinica"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.EspecialidadesController.GetEspecialidades">
+            <summary>
+            Obtiene especialidades
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.EspecialidadesController.GetEspecialidad(System.Int32)">
+            <summary>
+            Obtiene especialidades por Id
+            </summary>
+            <param name="especialidadId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.EspecialidadesController.CrearEspecialidad(ApiUtpmedic.Models.Dtos.EspecialidadDto)">
+            <summary>
+            Crea nueva especialidad
+            </summary>
+            <param name="especialidadDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.EspecialidadesController.ActualizarEspecialidad(System.Int32,ApiUtpmedic.Models.Dtos.EspecialidadDto)">
+            <summary>
+            Actualiza especialidad por Id
+            </summary>
+            <param name="especialidadId"></param>
+            <param name="especialidadDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.EspecialidadesController.BorrarEspecialidad(System.Int32)">
+            <summary>
+            Borra especialidad por Id
+            </summary>
+            <param name="especialidadId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.PublicacionesController.GetPublicaciones">
+            <summary>
+            Obtener las publicaciones
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.PublicacionesController.GetPublicacion(System.Int32)">
+            <summary>
+            Buscar publicaciones por Id
+            </summary>
+            <param name="publicacionId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.PublicacionesController.CrearPublicacion(ApiUtpmedic.Models.Dtos.PublicacionDto)">
+            <summary>
+            Crea nueva publicaciòn
+            </summary>
+            <param name="publicacionDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.PublicacionesController.ActualizarPublicacion(System.Int32,ApiUtpmedic.Models.Dtos.PublicacionDto)">
+            <summary>
+            Actualiza publicaciòn
+            </summary>
+            <param name="publicacionId"></param>
+            <param name="publicacionDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.PublicacionesController.BorrarPublicacion(System.Int32)">
+            <summary>
+            Borra publicaciòn por Id
+            </summary>
+            <param name="publicacionId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.UsuariosController.CrearUsuario(ApiUtpmedic.Models.Dtos.UsuarioCreateDto)">
+            <summary>
+            Crea un nuevo usuario
+            </summary>
+            <param name="UsuarioDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.UsuariosController.Login(ApiUtpmedic.Models.Dtos.UsuarioAuthLoginDto)">
+            <summary>
+            Inicia sesión
+            </summary>
+            <param name="usuarioAuthLoginDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.UsuariosController.GetUsuarios">
+            <summary>
+            Lista todos los usuario
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.UsuariosController.GetUsuario(System.Int32)">
+            <summary>
+            Obtiene un usuario existente
+            </summary>
+            <param name="usuarioId">Usuario id</param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.UsuariosController.BuscarUsuarioPersona(System.String)">
+            <summary>
+            Obtener datos del usuario
+            </summary>
+            <param name="dni">DNI del usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiUtpmedic.Controllers.UsuariosController.GetPersonaUsuario(System.Int32)">
+            <summary>
+            Obtiene datos del paciente
+            </summary>
+            <param name="idpaciente">Id del paciente</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
